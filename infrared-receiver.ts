@@ -1,6 +1,36 @@
 // MakerBit blocks supporting a Keyestudio Infrared Wireless Module Kit
 // (receiver module+remote controller)
 
+const enum BuoyID {
+  //% block="any"
+  Any = -1,
+  //% block="Buoy_A"
+  A = -1,
+  //% block="Buoy_B"
+  B = 0x62,
+  //% block="Buoy_C"
+  C = -2,
+  //% block="Buoy_D"
+  D = 0x22,
+  //% block="Buoy_E"
+  E = 0x02,
+  //% block="Buoy_F"
+  F = 0xc2,
+  //% block="Buoy_G"
+  G = -3,
+  //% block="Buoy_H"
+  H = 0xa8,
+  //% block="Buoy_I"
+  I = -4,
+  //% block="Buoy_J"
+  J = 0x68,
+  //% block="Buoy_K"
+  K = 0x98,
+  //% block="Buoy_L"
+  L = 0xb0,
+  
+}
+
 const enum IrButton {
   //% block="any"
   Any = -1,
@@ -335,7 +365,7 @@ namespace makerbit {
    * The last received datagram is returned or "0x00000000" if no data has been received yet.
    */
   //% subcategory="IR Receiver"
-  //% blockId=makerbit_infrared_ir_datagramE
+  //% blockId=makerbit_infrared_ir_datagram_flipped
   //% block="IR datagramE"
   //% weight=30
   export function irDatagramE(): string {
@@ -384,6 +414,22 @@ namespace makerbit {
   export function irButtonCode(button: IrButton): number {
     basic.pause(0); // Yield to support background processing when called in tight loops
     return button as number;
+  }
+  
+  /**
+   * Returns the Buoy code of a specific Buoy.
+   * @param buoyID the buoyID
+   */
+  //% subcategory="IR Receiver"
+  //% blockId=makerbit_infrared_buoy_code
+  //% button.fieldEditor="gridpicker"
+  //% button.fieldOptions.columns=2
+  //% button.fieldOptions.tooltips="false"
+  //% block="Buoy IR code %buoyID"
+  //% weight=60
+  export function buoyIrCode(buoyID: BuoyID): number {
+    basic.pause(0); // Yield to support background processing when called in tight loops
+    return buoyID as number;
   }
 
   function ir_rec_to16BitHex(value: number): string {
