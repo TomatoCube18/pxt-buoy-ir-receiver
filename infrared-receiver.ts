@@ -4,30 +4,30 @@
 const enum BuoyID {
   //% block="any"
   Any = -1,
-  //% block="Buoy_A"
-  A = -1,
-  //% block="Buoy_B"
-  B = 0x62,
-  //% block="Buoy_C"
-  C = -2,
-  //% block="Buoy_D"
-  D = 0x22,
-  //% block="Buoy_E"
-  E = 0x02,
-  //% block="Buoy_F"
-  F = 0xc2,
-  //% block="Buoy_G"
-  G = -3,
-  //% block="Buoy_H"
-  H = 0xa8,
-  //% block="Buoy_I"
-  I = -4,
-  //% block="Buoy_J"
-  J = 0x68,
-  //% block="Buoy_K"
-  K = 0x98,
-  //% block="Buoy_L"
-  L = 0xb0,
+  //% block="Buoy A"
+  A = 0x728D,
+  //% block="Buoy B"
+  B = 0xB04F,
+  //% block="Buoy C"
+  C = 0x30CF,
+  //% block="Buoy D"
+  D = 0x52AD,
+  //% block="Buoy E"
+  E = 0x906F,
+  //% block="Buoy F"
+  F = 0x10EF,
+  //% block="Buoy G"
+  G = 0x629D,
+  //% block="Buoy H"
+  H = 0xA05F,
+  //% block="Buoy I"
+  I = 0x20DF,
+  //% block="Buoy J"
+  J = 0x807F,
+  //% block="Buoy K"
+  K = 0x827D,
+  //% block="Buoy L"
+  L = 0x42BD,
   
 }
 
