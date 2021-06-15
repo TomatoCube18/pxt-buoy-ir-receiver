@@ -235,7 +235,8 @@ namespace makerbit {
           irState.hasNewDatagram = true;
           control.raiseEvent(MICROBIT_MAKERBIT_IR_DATAGRAM, 0);
 
-          const newCommand = irState.commandSectionBits >> 8;
+          //const newCommand = irState.commandSectionBits >> 8;
+          const newCommand = irState.commandSectionBits;
 
           // Process a new command
           if (newCommand !== activeCommand) {
@@ -288,11 +289,11 @@ namespace makerbit {
   //% blockId=makerbit_infrared_on_ir_button
   //% block="on IR button | %button | %action"
   //% button.fieldEditor="gridpicker"
-  //% button.fieldOptions.columns=3
+  //% button.fieldOptions.columns=2
   //% button.fieldOptions.tooltips="false"
   //% weight=50
   export function onIrButton(
-    button: IrButton,
+    button: BuoyID,
     action: IrButtonAction,
     handler: () => void
   ) {
@@ -300,7 +301,7 @@ namespace makerbit {
       action === IrButtonAction.Pressed
         ? MICROBIT_MAKERBIT_IR_BUTTON_PRESSED_ID
         : MICROBIT_MAKERBIT_IR_BUTTON_RELEASED_ID,
-      button === IrButton.Any ? EventBusValue.MICROBIT_EVT_ANY : button,
+      button === BuoyID.Any ? EventBusValue.MICROBIT_EVT_ANY : button,
       () => {
         handler();
       }
