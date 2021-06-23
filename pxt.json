@@ -1,6 +1,6 @@
 {
-  "name": "MakerBit-IR-Receiver",
-  "version": "1.5.3",
+  "name": "Buoy-IR-Receiver",
+  "version": "1.5.4",
   "description": "MakeCode extension for NEC Infrared Buoy/Remote Controller",
   "license": "MIT",
   "dependencies": {
