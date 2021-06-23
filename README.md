@@ -1,8 +1,6 @@
-# MakerBit IR Receiver
+# Buoy IR Receiver
 
-[![Build Status](https://travis-ci.org/1010Technologies/pxt-makerbit-ir-receiver.svg?branch=master)](https://travis-ci.org/1010Technologies/pxt-makerbit-ir-receiver)
-
-MakeCode extension for Keyestudio Infrared Wireless Module Kit. The extension should also work with other with IR receivers and NEC compatible IR remotes.
+MakeCode extension for TomatoCube* Infrared Buoy board. The extension should also work with other with NEC compatible IR remotes.
 
 # Documentation
 
