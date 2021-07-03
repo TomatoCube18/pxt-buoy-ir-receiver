@@ -4,12 +4,12 @@ MakeCode extension for TomatoCube* Infrared Buoy board. The extension should als
 
 # Documentation
 
-## makerbit.connectIrReceiver
+## connectIrReceiver
 
 Connects to the IR receiver module at the specified pin and configures the IR protocol.
 
 ```sig
-makerbit.connectIrReceiver(DigitalPin.P0, IrProtocol.Keyestudio)
+connectIrReceiver(DigitalPin.P0, IrProtocol.Keyestudio)
 ```
 
 ### Parameters
@@ -17,12 +17,12 @@ makerbit.connectIrReceiver(DigitalPin.P0, IrProtocol.Keyestudio)
 - `pin` - digital pin with an attached IR receiver
 - `protocol` - the IR protocol to be detected, for example IrProtocol.Keyestudio or IrProtocol.NEC
 
-## makerbit.onIrButton
+## monIrButton
 
 Do something when a specific button is pressed or released on the remote control.
 
 ```sig
-makerbit.onIrButton(IrButton.Ok, IrButtonAction.Pressed, () => {})
+onIrButton(IrButton.Ok, IrButtonAction.Pressed, () => {})
 ```
 
 ### Parameters
@@ -31,48 +31,48 @@ makerbit.onIrButton(IrButton.Ok, IrButtonAction.Pressed, () => {})
 - `action`- the trigger action
 - `handler` - body code to run when the event is raised
 
-## makerbit.irButton
+## irButton
 
 Returns the code of the IR button that was pressed last. Returns -1 (IrButton.Any) if no button has been pressed yet.
 
 ```sig
-makerbit.irButton()
+irButton()
 ```
 
-## makerbit.onIrDatagram
+## onIrDatagram
 
 Do something when a specific button is pressed or released on the remote control.
 
 ```sig
-makerbit.onIrDatagram(() => {})
+onIrDatagram(() => {})
 ```
 
 ### Parameters
 
 - `handler` - body code to run when the event is raised
 
-## makerbit.irDatagram
+## irDatagram
 
 Returns the IR datagram as 32-bit hexadecimal string. The last received datagram is returned or "0x00000000" if no data has been received yet.
 
 ```sig
-makerbit.irDatagram()
+irDatagram()
 ```
 
-## makerbit.wasIrDataReceived
+## wasIrDataReceived
 
 Returns true if any IR data was received since the last call of this function. False otherwise.
 
 ```sig
-makerbit.wasIrDataReceived();
+mwasIrDataReceived();
 ```
 
-## makerbit.irButtonCode
+## irButtonCode
 
 Returns the command code of a specific IR button.
 
 ```sig
-makerbit.irButtonCode(IrButton.Number_9)
+irButtonCode(IrButton.Number_9)
 ```
 
 ### Parameters
@@ -82,18 +82,18 @@ makerbit.irButtonCode(IrButton.Number_9)
 ## MakeCode Example
 
 ```blocks
-makerbit.connectIrReceiver(DigitalPin.P0, IrProtocol.Keyestudio)
+connectIrReceiver(DigitalPin.P0, IrProtocol.Keyestudio)
 
-makerbit.onIrButton(IrButton.Ok, IrButtonAction.Released, function () {
+onIrButton(IrButton.Ok, IrButtonAction.Released, function () {
     basic.showIcon(IconNames.SmallHeart)
 })
 
-makerbit.onIrButton(IrButton.Ok, IrButtonAction.Pressed, function () {
+onIrButton(IrButton.Ok, IrButtonAction.Pressed, function () {
     basic.showIcon(IconNames.Heart)
 })
 
 basic.forever(function () {
-    if (makerbit.wasAnyIrButtonPressed()) {
+    if (wasAnyIrButtonPressed()) {
         basic.showNumber(makerbit.irButton())
     }
 })
